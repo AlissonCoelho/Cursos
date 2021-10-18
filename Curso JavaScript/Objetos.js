@@ -228,3 +228,97 @@ const entriesClient3 = Object.entries(cliente3);
 //     [ 'saldo', 130 ],
 //     [ 'depositar', [Function: depositar]]
 // ]
+
+//----------------------------------------------------------------
+//operador de espalhamento - Spread operator
+//----------------------------------------------------------------
+const clientes = [
+    {
+        nome: "Alisson",
+        CPF: "11544798926",
+        idade: 28,
+        email: "alissonahc@gmail.com",
+        fone: [31971270466, 31922262516],
+        dependentes:
+        [{
+            parentesco: "filha",
+            nome: "Sonia Maria",
+            dataNasc: "04/05/2001"
+        },
+        {
+            parentesco: "filha",
+            nome: "Sarah Silvia",
+            dataNasc: "20/03/2011"
+        }],
+    
+        saldo: 100,
+    
+        depositar:function(valor)
+        {
+            this.saldo += valor;
+        }
+    },
+    {
+        nome: "Alisson2",
+        CPF: "11544798926",
+        idade: 28,
+        email: "alissonahc@gmail.com",
+        fone: [31971270466, 31922262516],
+        dependentes:
+        [{
+            parentesco: "filha",
+            nome: "Sonia Maria2",
+            dataNasc: "04/05/2001"
+        },
+        {
+            parentesco: "filha",
+            nome: "Sarah Silvia2",
+            dataNasc: "20/03/2011"
+        }],
+    
+        saldo: 100,
+    
+        depositar:function(valor)
+        {
+            this.saldo += valor;
+        }
+    }
+
+]
+
+const listaDependentes = [...clientes[0].dependentes,...clientes[1].dependentes];
+//console.table(listaDependentes);
+
+//////////////////////////////////////////////////
+const fichaGuerreiro = {
+    nome: "Aragorn",
+    classe: "guerreiro"
+   }
+   
+   const equipoGuerreiro = {
+    espada: "Andúril",
+    capa: "capa élfica +2"
+   }
+const guerreiro1 = {...fichaGuerreiro, ...equipoGuerreiro }
+console.log(guerreiro1)
+
+///////////////////////////////////////////////////
+const mago = {
+    nome: "Gandalf",
+    classe: "mago"
+   }
+   const guerreiro = {
+    nome: "Aragorn",
+    classe: "guerreiro"
+   }
+   
+   const ranger = {
+    nome: "Legolas",
+    classe: "ranger"
+   }
+   const personagens = { ...mago, ...guerreiro, ...ranger }
+console.log(personagens)
+//O JavaScript sobrescreveu as chaves com o mesmo nome a cada
+//ocorrência, assim o resultado final foi somente o último objeto
+//declarado dentro do objeto personagens
+JSON.stringify(clientes);
