@@ -4,5 +4,6 @@ module.exports = app =>
 {
     //req = recebido
     //res = enviando
-    app.get('/atendimentos',(req, res) => res.send('Você esta na rota atendimentos adicionado'))
+    app.get('/atendimentos',(req, res) => res.send(`Você esta na rota atendimentos adicionado
+    teste`))
 }
