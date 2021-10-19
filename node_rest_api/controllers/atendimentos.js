@@ -4,6 +4,6 @@ module.exports = app =>
 {
     //req = recebido
     //res = enviando
-    app.get('/atendimentos',(req, res) => res.send(`Você esta na rota atendimentos adicionado
-    teste`))
+    app.get('/atendimentos',(req, res) => res.send(`Você esta na rota atendimentos adicionado`))
+    app.post('/atendimentos',(req, res) => res.send(`Você está na rota de atendimento e está realizando um POST`) )
 }
