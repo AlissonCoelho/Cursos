@@ -1,4 +1,5 @@
 //Exporta o modulo e tem que ser usado em algum lugar
+//Instalado consign
 module.exports = app =>
 {
     //req = recebido
