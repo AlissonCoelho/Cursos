@@ -7,20 +7,38 @@ class adicionarAtendimento{
         
         const dataCriacao = moment().format();
 
-        // dataAtendimento = dados.dataAtendimento;
+        //validação dos dados 
+        if (dados.cliente.length <= 5)
+        {
+            res.status(406).send('nome cliente deve maior que 5 caracteres');
+            console.log('nome cliente deve maior que 5 caracteres');
+            return;
+        }
+
         dados.dataAtendimento = moment(dados.dataAtendimento, 'DD/MM/YYYY').format();
-        //console.log(dados.dataAtendimento);
+        if (!moment(dados.dataAtendimento).isAfter(dataCriacao))
+        {
+            res.status(406).send('Data deve ser maior ou igual a data atual');
+            console.log('Data deve ser maior ou igual a data atual');
+            return;
+        }
 
         dados.dataCriacao = dataCriacao;
-        //console.log(dados);
-
+        
         if (!existe)
         {
-            schema.create(dados, err => err ? res.status(501).json(err) : res.status(201).json(dados) )
+            schema.create(dados, err => {if (err) 
+                {
+                    res.status(501).json(dados);
+                    console.log('não foi criado', err);
+                }}
+            
+            )
         }
         else
             //res.send('usuario já existe');
             res.status(409).json(dados);
+            console.log('usuario já existe');
             
     }
 
