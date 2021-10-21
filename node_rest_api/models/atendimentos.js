@@ -3,8 +3,6 @@ const moment = require('moment');
 class adicionarAtendimento{
    async adicionar(schema, dados, res){
         
-        const existe =  await schema.findOne({cliente: dados["cliente"],pet: dados["pet"], servico: dados["servico"]}).exec();
-        
         const dataCriacao = moment().format();
 
         //validação dos dados 
@@ -24,23 +22,59 @@ class adicionarAtendimento{
         }
 
         dados.dataCriacao = dataCriacao;
+
+        const existe =  await schema.findOne({cliente: dados["cliente"],pet: dados["pet"], servico: dados["servico"]}).exec();
         
         if (!existe)
         {
             schema.create(dados, err => {if (err) 
                 {
-                    res.status(501).json(dados);
-                    console.log('não foi criado', err);
-                }}
+                    res.status(501).json(err);
+                    console.log('usuario não foi criado', err);
+                }
+                else
+                {
+                    res.status(201).json(dados);
+                    console.log('usuario criado')
+                    return;
+                }
+            }
+                
             
             )
         }
         else
+        {
             //res.send('usuario já existe');
             res.status(409).json(dados);
             console.log('usuario já existe');
+        }
             
     }
+   async listar(schema, res)
+    {
+        const Usuarios = await schema.find();
+
+        console.log(Usuarios);
+        console.log('usuario encontrados')
+        res.status(200).json(Usuarios);
+        return;
+    }
+    async buscarPorId(schema,id, res)
+        {
+            const Usuario = await schema.find({ _id:id});
+
+            if(!Usuario.length)
+            {
+                console.log('usuario não encontrado')
+                res.status(404).send("Não encontrado");
+                return;
+            }
+            console.log('usuario encontrado')
+            res.status(200).json(Usuario[0]);
+            return;
+        }
+    
 
 }
 module.exports = new adicionarAtendimento;

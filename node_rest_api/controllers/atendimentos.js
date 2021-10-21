@@ -1,5 +1,5 @@
-const addAtendimeto = require('../models/atendimentos');
-const importIndex = require("../index"); //importa um array do index
+const conrtroleAtendimeto = require('../models/atendimentos');
+const schema = require("../index"); //importa um array do index
 
 //Exporta o modulo e tem que ser usado em algum lugar
 //Instalado consign
@@ -7,12 +7,21 @@ module.exports = app =>
 {
     //req = recebido
     //res = enviando
-    app.get('/atendimentos',(req, res) => res.send(`Você esta na rota atendimentos adicionado`))
+    app.get('/atendimentos',(req, res) => 
+    {
+        conrtroleAtendimeto.listar(schema,res);
+    })
+
+    app.get('/atendimentos/:id',(req, res) => 
+    {
+        const id = req.params.id;
+        conrtroleAtendimeto.buscarPorId(schema,id,res);
+    })
 
     app.post('/atendimentos',(req, res) => {
         
         const dados = req.body;
-        addAtendimeto.adicionar(importIndex, dados, res);
+        conrtroleAtendimeto.adicionar(schema, dados, res);
         
     }
     )
