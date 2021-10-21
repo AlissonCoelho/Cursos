@@ -1,10 +1,10 @@
--3)Git e Github: Controle e compartilhe seu código
+0.1)Git e Github: Controle e compartilhe seu código
 https://cursos.alura.com.br/course/git-github-controle-de-versao
 
--2)Fundamentos do JavaScript: Tipos, variáveis e funções
+0.2)Fundamentos do JavaScript: Tipos, variáveis e funções
 https://cursos.alura.com.br/course/fundamentos-javascript-tipos-variaveis-funcoes?preRequirementFrom=fundamentos-javascript-arrays
 
--1)Fundamentos do JavaScript: Arrays
+0.3)Fundamentos do JavaScript: Arrays
 https://cursos.alura.com.br/course/fundamentos-javascript-arrays?preRequirementFrom=fundamentos-javascript-objetos
 
 0)Fundamentos do JavaScript: Objetos
