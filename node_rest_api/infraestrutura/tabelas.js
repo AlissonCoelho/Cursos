@@ -1,15 +1,15 @@
-function criarAtendimento (mongoose){
+function criarTabela (mongoose){
     this.mongoose = mongoose;
    SchemaAtendimento = new mongoose.Schema({
         cliente:  String,
         pet: String,
         servico: String,
         status: String,
-        observaccoes: String
+        observacoes: String
       });
       const Atendimento = mongoose.model('Atendimento', SchemaAtendimento);
-      return new Atendimento;
+      return Atendimento;
 }
 
-module.exports = criarAtendimento
+module.exports = criarTabela
 
