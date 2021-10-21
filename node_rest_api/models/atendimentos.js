@@ -16,10 +16,12 @@ class adicionarAtendimento{
 
         if (!existe)
         {
-            schema.create(dados, err => err ? res.status(500).json(err) : res.status(200).json(dados) )
+            schema.create(dados, err => err ? res.status(501).json(err) : res.status(201).json(dados) )
         }
         else
-            res.status(500).json(dados);
+            //res.send('usuario já existe');
+            res.status(409).json(dados);
+            
     }
 
 }
