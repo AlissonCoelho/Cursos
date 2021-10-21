@@ -5,7 +5,9 @@ function criarTabela (mongoose){
         pet: String,
         servico: String,
         status: String,
-        observacoes: String
+        observacoes: String,
+        dataAtendimento: Date,
+        dataCriacao: Date
       });
       const Atendimento = mongoose.model('Atendimento', SchemaAtendimento);
       return Atendimento;

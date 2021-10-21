@@ -1,5 +1,5 @@
-const addAtendimeto = require('../models/atendimentos')
-const importIndex = require("../index") //importa um array do index
+const addAtendimeto = require('../models/atendimentos');
+const importIndex = require("../index"); //importa um array do index
 
 //Exporta o modulo e tem que ser usado em algum lugar
 //Instalado consign
@@ -12,7 +12,7 @@ module.exports = app =>
     app.post('/atendimentos',(req, res) => {
         
         const dados = req.body;
-        addAtendimeto.adicionar(importIndex, dados, req, res);
+        addAtendimeto.adicionar(importIndex, dados, res);
         
     }
     )
