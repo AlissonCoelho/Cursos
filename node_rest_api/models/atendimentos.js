@@ -61,20 +61,70 @@ class adicionarAtendimento{
         return;
     }
     async buscarPorId(schema,id, res)
-        {
-            const Usuario = await schema.find({ _id:id});
+    {
+        const Usuario = await schema.find({ _id:id});
 
-            if(!Usuario.length)
-            {
-                console.log('usuario não encontrado')
-                res.status(404).send("Não encontrado");
-                return;
-            }
-            console.log('usuario encontrado')
-            res.status(200).json(Usuario[0]);
+        if(!Usuario.length)
+        {
+            console.log('usuario não encontrado')
+            res.status(404).send("Não encontrado");
             return;
         }
-    
+        console.log('usuario encontrado')
+        res.status(200).json(Usuario[0]);
+        return;
+    }
+    async alterar(schema,id,dados, res)
+    {
+
+        //validação dos dados 
+        if (dados.cliente.length <= 5)
+        {
+            res.status(406).send('nome cliente deve maior que 5 caracteres');
+            console.log('nome cliente deve maior que 5 caracteres');
+            return;
+        }
+
+        const agora = moment().format();
+
+        dados.dataAtendimento = moment(dados.dataAtendimento, 'DD/MM/YYYY').format();
+
+        if (!moment(dados.dataAtendimento).isAfter(agora))
+        {
+            res.status(406).send('Data deve ser maior ou igual a data atual');
+            console.log('Data deve ser maior ou igual a data atual');
+            return;
+        }
+
+        const Usuario = await schema.findByIdAndUpdate({ _id:id},dados);
+        next();
+        console.log("usuario: ",Object.entries(Usuario).length)
+
+        if(!Object.entries(Usuario).length)
+        {
+            console.log('usuario não encontrado')
+            res.status(404).send("Não encontrado");
+            return;
+        }
+
+        console.log('usuario alterado')
+        res.status(200).json(Usuario);
+        return;
+    }
+    async deletar(schema,id, res)
+    {
+        const Usuario = await schema.findOneAndDelete({ _id:id});
+
+        if(!Object.entries(Usuario).length)
+        {
+            console.log('usuario não deletado')
+            res.status(404).send("Não deletado");
+            return;
+        }
+        console.log('usuario deletado')
+        res.status(200).json(Usuario);
+        return;
+    }
 
 }
 module.exports = new adicionarAtendimento;

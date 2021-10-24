@@ -1,34 +1,39 @@
-0.1)Git e Github: Controle e compartilhe seu código
+# Arquivos Cursos Alura
+`Os arquivos desse repositorios foram gerados conforme a realização dos cursos.`
+## Fundamentos JavaScript
+### <a href="./Curso Git/"> 1 Git e Github: Controle e compartilhe seu código</a>
 https://cursos.alura.com.br/course/git-github-controle-de-versao
 
-0.2)Fundamentos do JavaScript: Tipos, variáveis e funções
+### <a href="./Curso JavaScript"> 2 Fundamentos do JavaScript: Tipos, variáveis e funções</a>
 https://cursos.alura.com.br/course/fundamentos-javascript-tipos-variaveis-funcoes?preRequirementFrom=fundamentos-javascript-arrays
 
-0.3)Fundamentos do JavaScript: Arrays
+### <a href="./Curso JavaScript"> 3 Fundamentos do JavaScript: Arrays</a>
 https://cursos.alura.com.br/course/fundamentos-javascript-arrays?preRequirementFrom=fundamentos-javascript-objetos
 
-0)Fundamentos do JavaScript: Objetos
+### <a href="./Curso JavaScript"> 4 Fundamentos do JavaScript: Objetos</a>
 https://cursos.alura.com.br/course/fundamentos-javascript-objetos?preRequirementFrom=node-rest-api
 
-Cursos NodeJS:
-1) Rest com NodeJS: API com Express e MySQL
+## Cursos NodeJS
+###  <a href="./node_rest_api">1 Rest com NodeJS: API com Express e MySQL</a>
 https://cursos.alura.com.br/course/node-rest-api
 
-2) Node.js e JWT: autenticação com tokens
+`Apesar do curso ter sido apresentado com o MySQL foi utilizado o MongoDB como banco de dados`
+
+### 2 Node.js e JWT: autenticação com tokens
 https://cursos.alura.com.br/course/node-jwt-autenticacao-tokens
 
-3) ORM com NodeJS: API com Sequelize e MySQL
+### 3 ORM com NodeJS: API com Sequelize e MySQL
 https://cursos.alura.com.br/course/orm-nodejs-api-sequelize-mysql
 
-4) ORM com NodeJS: Avançando nas funcionalidades do Sequelize
+### 4 ORM com NodeJS: Avançando nas funcionalidades do Sequelize
 https://cursos.alura.com.br/course/orm-nodejs-avancando-sequelize
 
-Cursos de VueJS:
-1) Vue.js parte 1: construindo Single Page Applications
+## Cursos de VueJS:
+### 1 Vue.js parte 1: construindo Single Page Applications
 https://cursos.alura.com.br/course/vue-parte1
 
-2) Vue.js parte 2: construindo Single Page Applications
+### 2 Vue.js parte 2: construindo Single Page Applications
 https://cursos.alura.com.br/course/vue-parte2
 
-3) Vue.js: Protegendo recursos com autenticação e VueX
+### 3 Vue.js: Protegendo recursos com autenticação e VueX
 https://cursos.alura.com.br/course/vuejs-protegendo-recursos-com-autenticacao-e-vuex

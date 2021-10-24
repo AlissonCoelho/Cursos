@@ -23,6 +23,21 @@ module.exports = app =>
         const dados = req.body;
         conrtroleAtendimeto.adicionar(schema, dados, res);
         
-    }
-    )
+    })
+
+    app.patch('/atendimentos/:id',(req, res) => {
+        
+        const dados = req.body;
+        const id = req.params.id;
+        conrtroleAtendimeto.alterar(schema,id, dados, res);
+        
+    })
+
+    app.delete('/atendimentos/:id',(req, res) => 
+    {
+        const id = req.params.id;
+        conrtroleAtendimeto.deletar(schema,id,res);
+    })
+
+    
 }
