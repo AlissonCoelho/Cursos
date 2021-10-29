@@ -1,4 +1,4 @@
-# Arquivos Cursos Alura
+# Arquivos Cursos
 `Os arquivos desse repositorios foram gerados conforme a realização dos cursos.`
 ## Fundamentos JavaScript
 ### <a href="./Curso Git/"> 1 Git e Github: Controle e compartilhe seu código</a>
@@ -42,6 +42,6 @@ https://cursos.alura.com.br/course/vue-parte2
 https://cursos.alura.com.br/course/vuejs-protegendo-recursos-com-autenticacao-e-vuex
 
 `React`
-### <a href="./React">1 React: Entendendo como a biblioteca funciona</a>
+### <a href="./projeto_react">1 React: Entendendo como a biblioteca funciona</a>
 https://cursos.alura.com.br/course/react-js
 
