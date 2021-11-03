@@ -1,11 +1,9 @@
 const passpot = require('passport');
+const bcrypt = require('bcrypt')
 const LocalStrategy = require('passport-local').Strategy;
-
+const {InvalidArgumentError} = require('../erros')
 const Usuario = require('./usuarios-modelo');
 
-const {InvalidArgumentError} = require('../erros')
-
-const bcrypt = require('bcrypt')
 
 function verificaUsuario (usuario)
 {
@@ -27,7 +25,7 @@ async function verificaSenha (senha, senhaHash)
 passpot.use(
     new LocalStrategy(
         {
-            usenameField: 'email',
+            usernameField: 'email',
             passwordField: 'senha',
             session: false
         }, async (emai, senha, done) =>

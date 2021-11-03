@@ -1,6 +1,6 @@
 const express = require('express');
 //const bodyParser = require('body-parser');
-const {estrategiasA} = require('./src/usuarios/index');
+const {estrategiasAutenticacao} = require('./src/usuarios/index');
 
 const app = express()
 

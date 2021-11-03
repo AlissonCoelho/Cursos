@@ -4,7 +4,8 @@ const passport = require('passport');
 module.exports = app => {
   app
       .route('/usuario/login')
-      .post(passport.authenticate('local', {session : false}), usuariosControlador.login);
+      //Configirado passport estrategia local e sem seções passport.authenticate('local', {session : false}),
+      .post(passport.authenticate('local', {session: false}), usuariosControlador.login);
 
 
   app
