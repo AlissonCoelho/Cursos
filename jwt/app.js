@@ -1,11 +1,13 @@
 const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
+const {estrategiasA} = require('./src/usuarios/index');
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true
-  })
-);
+const app = express()
+
+//app.use(bodyParser.json())
+app.use(express.json()) 
+
+//app.use(bodyParser.urlencoded({extended:true}))
+app.use(express.urlencoded())
 
 module.exports = app;
