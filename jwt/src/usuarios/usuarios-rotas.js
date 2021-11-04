@@ -7,6 +7,10 @@ module.exports = app => {
       //Configirado passport estrategia local e sem seções passport.authenticate('local', {session : false}),
       .post(middlewaresAutenticacao.local, usuariosControlador.login);
   app
+      .route('/usuario/logout')
+      //Configirado passport estrategia local e sem seções passport.authenticate('local', {session : false}),
+      .get(middlewaresAutenticacao.bearer,usuariosControlador.logout);
+  app
     .route('/usuario')
     .post(usuariosControlador.adiciona)
     .get(usuariosControlador.lista);

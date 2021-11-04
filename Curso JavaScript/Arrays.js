@@ -24,7 +24,7 @@ const sala12 = nomes.slice(nomes.length/2);
 
 //console.log(sala1.length + sala12.length);
 
-//Metodo Splice - Dividir o array
+//Metodo Splice - substituir
 let nome0 = nomes[0];
 nomes.splice(0,1,nomes[20]);
 nomes.pop();

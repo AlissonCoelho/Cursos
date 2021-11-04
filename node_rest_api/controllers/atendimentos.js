@@ -1,5 +1,5 @@
 const conrtroleAtendimeto = require('../models/atendimentos');
-const schema = require("../index"); //importa um array do index
+const schema = require("../index"); //importa tabela do index
 
 //Exporta o modulo e tem que ser usado em algum lugar
 //Instalado consign

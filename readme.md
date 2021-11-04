@@ -19,7 +19,7 @@ https://cursos.alura.com.br/course/node-rest-api
 
 `Apesar do curso ter sido apresentado com o MySQL foi utilizado o MongoDB como banco de dados`
 
-### 2 Node.js e JWT: autenticação com tokens
+### <a href="./jwt">2 Node.js e JWT: autenticação com tokens</a>
 https://cursos.alura.com.br/course/node-jwt-autenticacao-tokens
 
 ### 3 ORM com NodeJS: API com Sequelize e MySQL
@@ -44,4 +44,13 @@ https://cursos.alura.com.br/course/vuejs-protegendo-recursos-com-autenticacao-e-
 `React`
 ### <a href="./projeto_react">1 React: Entendendo como a biblioteca funciona</a>
 https://cursos.alura.com.br/course/react-js
+
+### <a href="">2 React: Function Components, uma abordagem moderna</a>
+https://cursos.alura.com.br/course/react-function-components
+
+### <a href="">3 React: Hooks, Contextos e boas práticas</a>
+https://cursos.alura.com.br/course/react-hooks-e-formularios
+
+### <a href="">4 React Router: Navegação em uma SPA</a>
+https://cursos.alura.com.br/course/react-router-navegacao-spa
 
