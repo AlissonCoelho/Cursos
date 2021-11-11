@@ -1,7 +1,8 @@
 const express = require('express');
-//const bodyParser = require ('body-parser');
+const routes = require('./routes');
 
 const app = express();
+const port = 3000;
 
 //app.use(bodyParser.json())
 app.use(express.json()) 
@@ -9,11 +10,7 @@ app.use(express.json())
 //app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.urlencoded())
 
-const port = 3000;
-
-app.get('/teste', (req,res) => 
-    res.status(200).json({ mesg:'Curso a API Sequialize' })
-)
+routes(app);
 
 app.listen(port,()=> console.log(`servidor esta rodando na porta ${port}`));
 
