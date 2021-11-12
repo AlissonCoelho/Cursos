@@ -39,18 +39,16 @@ class Turma {
     try {
       const { id } = req.params;
       const dados = req.body;
-      const updateTurma = await dataBase.Pessoas.update(dados, {where: {id: Number(id)}});
-      if(updateTurma)
-      {
+      const updateTurma = await dataBase.Pessoas.update(dados, {
+        where: { id: Number(id) },
+      });
+      if (updateTurma) {
         console.log("turma atualizada id:", id);
         return res.status(200).send(`turma atualizada id: ${id}`);
-      }
-      else
-      {
+      } else {
         console.log("turma não atualizada id:", id);
         return res.status(203).send("Não atualizado");
       }
-      
     } catch (error) {
       return res.status(500).json(error.message);
     }
@@ -58,18 +56,25 @@ class Turma {
   static async deleteTurma(req, res) {
     try {
       const { id } = req.params;
-      const deleteTurma = await dataBase.Pessoas.destroy({where: {id: Number(id)}});
-      if(deleteTurma)
-      {
+      const deleteTurma = await dataBase.Pessoas.destroy({
+        where: { id: Number(id) },
+      });
+      if (deleteTurma) {
         console.log("turma deletada id:", id);
         return res.status(200).send(`turma deletada id: ${id}`);
-      }
-      else
-      {
+      } else {
         console.log("turma não deletada id:", id);
         return res.status(203).send("Não deletada");
       }
-      
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+  static async restauraTurma(req, res) {
+    const { id } = req.params;
+    try {
+      await dataBase.Turmas.restore({ where: { id: Number(id) } });
+      return res.status(200).json({ mensagem: `id ${id} restaurado` });
     } catch (error) {
       return res.status(500).json(error.message);
     }

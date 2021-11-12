@@ -13,4 +13,6 @@ router.put("/turmas/:id", TurmaControllers.updataTurma);
 
 router.delete("/turmas/:id", TurmaControllers.deleteTurma);
 
+router.post('/turmas/:id/restaura', TurmaControllers.restauraTurma)
+
 module.exports = router;

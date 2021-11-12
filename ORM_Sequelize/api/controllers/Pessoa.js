@@ -111,13 +111,12 @@ class Pessoa {
       return res.status(500).send(`Erro: ${error.message}`);
     }
   }
-
   static async deleteMatricula(req, res) {
     try {
       const { estudante_id, matricula_id } = req.params;
       console.log("estudante_id, matricula_id:", estudante_id, matricula_id);
 
-      const deleteMatricula =  await dataBase.Matriculas.destroy({
+      const deleteMatricula = await dataBase.Matriculas.destroy({
         where: { id: Number(matricula_id), estudante_id: Number(estudante_id) },
       });
       if (deleteMatricula) {
@@ -129,6 +128,30 @@ class Pessoa {
       }
     } catch (error) {
       return res.status(500).json(error.message);
+    }
+  }
+  static async restauraPessoa(req, res) {
+    try {
+      const { id } = req.params;
+      await dataBase.Pessoas.restore({where: { id: Number(id) }})
+      return res.status(200).json({msg: `pessoa restaurada id: ${id}`})
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+  static async restauraMatricula(req, res) {
+    const { estudanteId, matriculaId } = req.params
+    try {
+      await dataBase.Matriculas.restore({
+        where: {
+          id: Number(matriculaId),
+          estudante_id: Number(estudanteId)
+        }
+      })
+      return res.status(200).json({ mensagem: `id ${id} restaurado`})
+    } catch (error) {
+      return res.status(500).json(error.message)
     }
   }
 }
