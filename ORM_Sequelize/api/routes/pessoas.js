@@ -13,4 +13,12 @@ router.put("/pessoas/:id", PessoaControllers.updataPerson);
 
 router.delete("/pessoas/:id", PessoaControllers.deletePerson);
 
+router.get("/pessoa/:estudante_id/matricula/:matricula_id", PessoaControllers.getOneMatricula);
+
+router.post("/pessoa/:estudante_id/matricula", PessoaControllers.createMatricula);
+
+router.put("/pessoa/:estudante_id/matricula/:matricula_id", PessoaControllers.updateMatricula);
+
+router.delete("/pessoa/:estudante_id/matricula/:matricula_id", PessoaControllers.deleteMatricula);
+
 module.exports = router;
