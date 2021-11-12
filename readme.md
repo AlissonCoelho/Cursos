@@ -22,24 +22,13 @@ https://cursos.alura.com.br/course/node-rest-api
 ### <a href="./jwt">2 Node.js e JWT: autenticação com tokens</a>
 https://cursos.alura.com.br/course/node-jwt-autenticacao-tokens
 
-### 3 ORM com NodeJS: API com Sequelize e MySQL
+### <a href="./ORM_Sequelize">2 3 ORM com NodeJS: API com Sequelize e MySQL</a>
 https://cursos.alura.com.br/course/orm-nodejs-api-sequelize-mysql
 
 ### 4 ORM com NodeJS: Avançando nas funcionalidades do Sequelize
 https://cursos.alura.com.br/course/orm-nodejs-avancando-sequelize
 
 ## Cursos de front-end:
-
-`VueJS`
-
-### 1 Vue.js parte 1: construindo Single Page Applications
-https://cursos.alura.com.br/course/vue-parte1
-
-### 2 Vue.js parte 2: construindo Single Page Applications
-https://cursos.alura.com.br/course/vue-parte2
-
-### 3 Vue.js: Protegendo recursos com autenticação e VueX
-https://cursos.alura.com.br/course/vuejs-protegendo-recursos-com-autenticacao-e-vuex
 
 `React`
 ### <a href="./projeto_react">1 React: Entendendo como a biblioteca funciona</a>
@@ -53,4 +42,15 @@ https://cursos.alura.com.br/course/react-hooks-e-formularios
 
 ### <a href="">4 React Router: Navegação em uma SPA</a>
 https://cursos.alura.com.br/course/react-router-navegacao-spa
+
+`VueJS`
+
+### 1 Vue.js parte 1: construindo Single Page Applications
+https://cursos.alura.com.br/course/vue-parte1
+
+### 2 Vue.js parte 2: construindo Single Page Applications
+https://cursos.alura.com.br/course/vue-parte2
+
+### 3 Vue.js: Protegendo recursos com autenticação e VueX
+https://cursos.alura.com.br/course/vuejs-protegendo-recursos-com-autenticacao-e-vuex
 
