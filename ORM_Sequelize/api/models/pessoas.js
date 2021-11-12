@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Pessoas extends Model {
     /**
@@ -10,19 +8,29 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Pessoas.hasMany(models.Turmas, {foreignKey: 'docente_id'});
-      Pessoas.hasMany(models.Matriculas, {foreignKey: 'estudante_id'});
+      Pessoas.hasMany(models.Turmas, { foreignKey: "docente_id" });
+      Pessoas.hasMany(models.Matriculas, { foreignKey: "estudante_id" });
     }
-  };
-  Pessoas.init({
-    nome: DataTypes.STRING,
-    ativo: DataTypes.BOOLEAN,
-    email: DataTypes.STRING,
-    role: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Pessoas',
-    paranoid: true,
-  });
+  }
+  Pessoas.init(
+    {
+      nome: {type: DataTypes.STRING,
+      validate: { validadora: function(dado){
+        if (dado.length < 3)
+        {
+          throw new Error ('Nome deve ter mais que 3 caracteres')
+        }
+      }}},
+      ativo: DataTypes.BOOLEAN,
+      email: DataTypes.STRING,
+      role: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: "Pessoas",
+      paranoid: true,
+      defaultScope: { where: { ativo: true } },
+    }
+  );
   return Pessoas;
 };
