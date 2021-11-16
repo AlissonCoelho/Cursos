@@ -9,18 +9,25 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Pessoas.hasMany(models.Turmas, { foreignKey: "docente_id" });
-      Pessoas.hasMany(models.Matriculas, { foreignKey: "estudante_id" });
+      Pessoas.hasMany(models.Matriculas, {
+        foreignKey: "estudante_id",
+        scope: { status: "confirmado" },
+        as: "aulasMatriculadas",
+      });
     }
   }
   Pessoas.init(
     {
-      nome: {type: DataTypes.STRING,
-      validate: { validadora: function(dado){
-        if (dado.length < 3)
-        {
-          throw new Error ('Nome deve ter mais que 3 caracteres')
-        }
-      }}},
+      nome: {
+        type: DataTypes.STRING,
+        validate: {
+          validadora: function (dado) {
+            if (dado.length < 3) {
+              throw new Error("Nome deve ter mais que 3 caracteres");
+            }
+          },
+        },
+      },
       ativo: DataTypes.BOOLEAN,
       email: DataTypes.STRING,
       role: DataTypes.STRING,

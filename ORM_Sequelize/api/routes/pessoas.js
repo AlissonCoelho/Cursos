@@ -23,7 +23,12 @@ router.delete("/pessoa/:estudante_id/matricula/:matricula_id", PessoaControllers
 
 router.post("/pessoas/:id/restaura", PessoaControllers.restauraPessoa);
 
-router.post('/pessoas/:estudanteId/matricula/:matriculaId/restaura', PessoaControllers.restauraMatricula)
+router.post('/pessoas/:estudanteId/matricula/:matriculaId/restaura', PessoaControllers.restauraMatricula);
 
+router.get("/pessoas/:estudante_id/matriculas", PessoaControllers.pegaMatriculas);
+
+router.get("/pessoas/matriculas/:turma_id/confirmados", PessoaControllers.pegaMatriculasPorTurmas);
+
+router.get("/pessoas/matriculas/lotada", PessoaControllers.pegaTurmasLotadas);
 
 module.exports = router;

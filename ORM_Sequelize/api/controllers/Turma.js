@@ -1,9 +1,16 @@
 const dataBase = require("../models");
+const {Op} = require('sequelize');
 
 class Turma {
   static async getAllTurmas(req, res) {
     try {
-      const allTurmas = await dataBase.Pessoas.findAll();
+      const {dataInicio, dataFinal} = req.query
+      const where = {}
+
+      dataInicio || dataFinal ? where.data_inicio= {} : null;
+      dataInicio ? where.data_inicio[Op.gte] = dataInicio : null;
+      dataFinal ? where.data_inicio[Op.lte] = dataFinal : null;
+      const allTurmas = await dataBase.Turmas.findAll({where});
 
       console.log("turmas encontradas");
       return res.status(200).json(allTurmas);
@@ -11,11 +18,10 @@ class Turma {
       return res.status(500).json(error.message);
     }
   }
-
   static async getOneTurma(req, res) {
     try {
       const { id } = req.params;
-      const Turma = await dataBase.Pessoas.findOne({
+      const Turma = await dataBase.Turmas.findOne({
         where: { id: Number(id) },
       });
       console.log("turma encontrada id:", Turma.id);
@@ -24,11 +30,10 @@ class Turma {
       return res.status(500).json(error.message);
     }
   }
-
   static async createTurma(req, res) {
     try {
       const Turma = req.body;
-      const newTurma = await dataBase.Pessoas.create(Turma);
+      const newTurma = await dataBase.Turmas.create(Turma);
       console.log("turma criada id:", newTurma.id);
       return res.status(200).json(newTurma);
     } catch (error) {
@@ -39,7 +44,7 @@ class Turma {
     try {
       const { id } = req.params;
       const dados = req.body;
-      const updateTurma = await dataBase.Pessoas.update(dados, {
+      const updateTurma = await dataBase.Turmas.update(dados, {
         where: { id: Number(id) },
       });
       if (updateTurma) {
@@ -56,7 +61,7 @@ class Turma {
   static async deleteTurma(req, res) {
     try {
       const { id } = req.params;
-      const deleteTurma = await dataBase.Pessoas.destroy({
+      const deleteTurma = await dataBase.Turmas.destroy({
         where: { id: Number(id) },
       });
       if (deleteTurma) {
