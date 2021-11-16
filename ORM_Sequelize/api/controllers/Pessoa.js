@@ -197,5 +197,20 @@ class Pessoa {
       return res.status(500).send(`Erro: ${error.message}`);
     }
   }
+  static async cancelaPessoa(req, res) {
+    try {
+      dataBase.sequelize.transaction( async transacao => {
+        const { estudante_id } = req.params;
+        await dataBase.Pessoas.update({ativo: false}, {where: { id: Number(estudante_id) }}, {transaction:transacao });
+        await dataBase.Matriculas.update({status: 'cancelado'}, {where: {estudante_id:Number(estudante_id)}}, {transaction:transacao });
+       
+        console.log(`Matriculas estundante id: ${estudante_id} cancelado`);
+        return res.status(200).json({msg: `Matriculas estundante id: ${estudante_id} cancelado`});
+      } );
+      
+    } catch (error) {
+      return res.status(500).send(`Erro: ${error.message}`);
+    }
+  }
 }
 module.exports = Pessoa;

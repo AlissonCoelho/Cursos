@@ -31,4 +31,6 @@ router.get("/pessoas/matriculas/:turma_id/confirmados", PessoaControllers.pegaMa
 
 router.get("/pessoas/matriculas/lotada", PessoaControllers.pegaTurmasLotadas);
 
+router.post("/pessoas/:estudante_id/matricula", PessoaControllers.cancelaPessoa);
+
 module.exports = router;
