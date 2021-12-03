@@ -22,10 +22,10 @@ https://cursos.alura.com.br/course/node-rest-api
 ### <a href="./jwt">2 Node.js e JWT: autenticação com tokens</a>
 https://cursos.alura.com.br/course/node-jwt-autenticacao-tokens
 
-### <a href="./ORM_Sequelize">2 3 ORM com NodeJS: API com Sequelize e MySQL</a>
+### <a href="./ORM_Sequelize">3 ORM com NodeJS: API com Sequelize e MySQL</a>
 https://cursos.alura.com.br/course/orm-nodejs-api-sequelize-mysql
 
-### 4 ORM com NodeJS: Avançando nas funcionalidades do Sequelize
+### <a href="./ORM_Sequelize">4 ORM com NodeJS: Avançando nas funcionalidades do Sequelize</a>
 https://cursos.alura.com.br/course/orm-nodejs-avancando-sequelize
 
 ## Cursos de front-end:
